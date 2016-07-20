@@ -32,10 +32,10 @@ int main(int argc, char** argv) {
 	    return 1;
 	}
 
-	std::cout << "Title:\t\t" << m->getTitle() << std::endl;
+	std::cout << m->getTitle() << " - " << m->getAuthor() << ";(" << m->getPublisher() << ");";
+	/*
 	std::cout << "Author:\t\t" << m->getAuthor() << std::endl;
 	std::cout << "Publisher:\t" << m->getPublisher() << std::endl;
-	/*
 	std::cout << "Language:\t" << Locale::getName(m->getLocale()) << std::endl;
 	std::cout << "Length:\t\t" << m->getTextSize() << std::endl;
 	std::cout << "Images:\t\t" << m->imagesCount << std::endl;

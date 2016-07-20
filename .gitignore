@@ -2,3 +2,4 @@ bin
 lib
 nbproject
 *.o
+list_*
