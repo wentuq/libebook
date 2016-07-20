@@ -4,10 +4,10 @@
 ### Programs scans for ebooks
 
 EBOOKS_PATH='../../ebooks/'
+APP_DIR="$(pwd)"
 
 function mybookinfo {
-	bookinfo "$1"
-#	echo -e "$1"
+	"$APP_DIR"/bin/bookinfo2 "$1"
 	realpath --relative-to="$EBOOKS_PATH" "$1"
 }
 
@@ -46,7 +46,7 @@ find "$EBOOKS_PATH" -type f -iregex '.*\.\(mobi\|epub\)' -print0 | while IFS= re
 done
 
 # Sort it
-sort list_mobi_epub.txt > list_mobi_epub_sorted.txt
+sort list_mobi_epub.txt | sed '/^\s*$/d' > list_mobi_epub_sorted.txt
 
 
 # Find pdf

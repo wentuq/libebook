@@ -31,8 +31,16 @@ int main(int argc, char** argv) {
 	    cerr << "Unable to open ebook " << file << std::endl;
 	    return 1;
 	}
+	else if(m->getAuthor().empty()) {
+	    cerr << "No author data " << file << std::endl;
+	    return 2;
+	}
+	else if(m->getTitle().empty()) {
+	    cerr << "No title data " << file << std::endl;
+	    return 3;
+	}
 
-	std::cout << m->getTitle() << " - " << m->getAuthor() << ";(" << m->getPublisher() << ");";
+	std::cout << m->getAuthor() << "-" << m->getTitle() ;
 	/*
 	std::cout << "Author:\t\t" << m->getAuthor() << std::endl;
 	std::cout << "Publisher:\t" << m->getPublisher() << std::endl;
